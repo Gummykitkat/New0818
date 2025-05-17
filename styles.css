@@ -42,7 +42,8 @@ body {
 }
 
 .logo-img {
-    align: center;
+  display: flex;
+  align-items: center;
     height: 150px;
 }
 
