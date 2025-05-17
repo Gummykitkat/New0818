@@ -41,10 +41,11 @@ body {
     z-index: 1000;
 }
 
-.logo-img {
+.logo-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-    height: 150px;
+  height: 150px;
 }
 
 .nav-menu {
