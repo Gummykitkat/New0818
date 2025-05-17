@@ -42,7 +42,7 @@ body {
 }
 
 .logo-img {
-    align-items: center;
+    align: center;
     height: 150px;
 }
 
