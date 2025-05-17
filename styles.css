@@ -40,12 +40,16 @@ body {
     top: 0;
     z-index: 1000;
 }
-
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 200px;
+}
+.logo-img {
+  display: flex;
+  align-items: center;
+    height: 150px;
 }
 
 .nav-menu {
