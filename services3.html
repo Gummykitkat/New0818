@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore AI consulting, web design, and branding services at Next Logic AI and Design.">
+    <meta name="keywords" content="AI consulting, web design, app design, branding, Next Logic AI">
+    <meta name="author" content="Next Logic AI and Design">
+    <title>Services | Next Logic AI and Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for better organization */
+        .service-category {
+            margin-bottom: 4rem;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .category-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .pricing-note h3 {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-note p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .service-card.featured {
+            position: relative;
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+        
+        .service-card.featured::after {
+            content: 'POPULAR';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #00d4ff, #00ff88);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .comparison-table {
+            margin: 3rem 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #2b023e, #510151);
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-cta {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .contact-cta h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-cta p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Next Logic AI and Design Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <button class="hamburger" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Your Business with <span class="highlight">Next-Level Solutions</span></h1>
+            <p>From AI consulting to web design and branding - we offer comprehensive services tailored to accelerate your growth and innovation.</p>
+        </div>
+    </section>
+
+    <!-- Consulting Services -->
+    <section class="services">
+        <div class="container">
+            <div class="service-category">
+                <div class="category-header">
+                    <h2 class="category-title">Consulting Services</h2>
+                    <p class="category-description">Expert guidance and hands-on implementation to transform your business with cutting-edge technology and design.</p>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-card featured">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Consulting</h3>
+                        <p>Harness the power of artificial intelligence with custom solutions including chatbots, automation, predictive analytics, and machine learning integration.</p>
+                        <ul>
+                            <li>Strategic AI assessment and planning</li>
+                            <li>Custom AI tool development</li>
+                            <li>Data analysis and insights</li>
+                            <li>Machine learning integration</li>
+                            <li>Process automation</li>
+                        </ul>
+                        <p class="service-price">$80/Hour</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-desktop"></i>
+                        <h3>Web & App Design</h3>
+                        <p>Create stunning, user-friendly digital experiences that engage customers and drive conversions across all devices.</p>
+                        <ul>
+                            <li>UI/UX design and research</li>
+                            <li>Responsive web development</li>
+                            <li>Mobile app design</li>
+                            <li>Performance optimization</li>
+                            <li>User testing and iteration</li>
+                        </ul>
+                        <p class="service-price">$60/Hour</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-palette"></i>
+                        <h3>Branding & Identity</h3>
+                        <p>Build a memorable brand identity that resonates with your audience and sets you apart from the competition.</p>
+                        <ul>
+                            <li>Logo and visual identity design</li>
+                            <li>Brand strategy and positioning</li>
+                            <li>Marketing collateral design</li>
+                            <li>Brand guidelines and standards</li>
+                            <li>Digital asset creation</li>
+                        </ul>
+                        <p class="service-price">$50/Hour</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Website Packages -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h2 class="category-title">Website Packages</h2>
+                    <p class="category-description">Complete website solutions designed to establish and grow your online presence.</p>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Starter Website</h3>
+                        <p>Perfect for small businesses and startups looking to establish a professional online presence.</p>
+                        <ul>
+                            <li>Up to 5 custom pages</li>
+                            <li>Mobile-responsive design</li>
+                            <li>Basic SEO optimization</li>
+                            <li>Contact forms and integration</li>
+                            <li>Social media links</li>
+                            <li>30 days of support</li>
+                        </ul>
+                        <p class="service-price">$2,000</p>
+                    </div>
+                    
+                    <div class="service-card featured">
+                        <i class="fas fa-store"></i>
+                        <h3>Business Website</h3>
+                        <p>Enhanced website with e-commerce capabilities and advanced features for growing businesses.</p>
+                        <ul>
+                            <li>Up to 10 custom pages</li>
+                            <li>E-commerce integration</li>
+                            <li>Advanced SEO setup</li>
+                            <li>Payment gateway integration</li>
+                            <li>Analytics and tracking</li>
+                            <li>60 days of support</li>
+                        </ul>
+                        <p class="service-price">$5,000</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Enterprise Website/App</h3>
+                        <p>Custom-built website or mobile application with advanced features and scalable architecture.</p>
+                        <ul>
+                            <li>Unlimited custom pages</li>
+                            <li>Custom functionality development</li>
+                            <li>API integrations</li>
+                            <li>Database design and management</li>
+                            <li>Scalable cloud hosting setup</li>
+                            <li>90 days of support</li>
+                        </ul>
+                        <p class="service-price">$12,000+</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Solutions -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h2 class="category-title">AI Solutions</h2>
+                    <p class="category-description">Intelligent automation and AI-powered tools to streamline your business operations.</p>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Basic AI Integration</h3>
+                        <p>Simple AI features to enhance your existing systems with minimal setup and immediate impact.</p>
+                        <ul>
+                            <li>Chatbot setup and training</li>
+                            <li>Basic process automation</li>
+                            <li>Data preprocessing and cleanup</li>
+                            <li>Simple recommendation systems</li>
+                            <li>Integration support</li>
+                        </ul>
+                        <p class="service-price">$1,500</p>
+                    </div>
+                    
+                    <div class="service-card featured">
+                        <i class="fas fa-brain"></i>
+                        <h3>Advanced AI Solution</h3>
+                        <p>Sophisticated AI systems designed to solve complex business challenges and drive innovation.</p>
+                        <ul>
+                            <li>Custom machine learning models</li>
+                            <li>Predictive analytics implementation</li>
+                            <li>Natural language processing</li>
+                            <li>Computer vision solutions</li>
+                            <li>End-to-end AI deployment</li>
+                        </ul>
+                        <p class="service-price">$4,000</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Enterprise AI Platform</h3>
+                        <p>Comprehensive AI infrastructure for large-scale operations and complex business requirements.</p>
+                        <ul>
+                            <li>Deep learning model development</li>
+                            <li>Scalable AI infrastructure</li>
+                            <li>Multi-model integration</li>
+                            <li>Real-time processing systems</li>
+                            <li>Enterprise-grade security</li>
+                        </ul>
+                        <p class="service-price">$10,000+</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ongoing Support -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h2 class="category-title">Ongoing Support & Maintenance</h2>
+                    <p class="category-description">Keep your systems running smoothly with our comprehensive support and maintenance plans.</p>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Website Maintenance</h3>
+                        <p>Essential maintenance to keep your website secure, updated, and performing at its best.</p>
+                        <ul>
+                            <li>Monthly security updates</li>
+                            <li>Performance monitoring</li>
+                            <li>Content backup and recovery</li>
+                            <li>Technical support</li>
+                            <li>Minor content updates</li>
+                        </ul>
+                        <p class="service-price">$500/Month</p>
+                    </div>
+                    
+                    <div class="service-card featured">
+                        <i class="fas fa-life-ring"></i>
+                        <h3>Premium Support (Retainer)</h3>
+                        <p>Comprehensive ongoing support with dedicated hours for updates, improvements, and new features.</p>
+                        <ul>
+                            <li>5-10 hours monthly support</li>
+                            <li>AI model updates and optimization</li>
+                            <li>System monitoring and alerts</li>
+                            <li>Priority technical support</li>
+                            <li>Quarterly strategy consultations</li>
+                        </ul>
+                        <p class="service-price">$750/Month</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Note -->
+            <div class="pricing-note">
+                <h3><i class="fas fa-info-circle"></i> Flexible Pricing</h3>
+                <p>All pricing is customized based on your specific needs, project complexity, and business requirements. We offer volume discounts for multiple services and long-term partnerships. Contact us for a personalized quote.</p>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="contact-cta">
+                <h3>Ready to Transform Your Business?</h3>
+                <p>Let's discuss how our services can help you achieve your goals. Get a free consultation and custom quote tailored to your specific needs.</p>
+                <a href="contact.html" class="btn-primary">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-item">
+                <h3>Next Logic AI and Design</h3>
+                <p>Empowering businesses with innovation since 2024.</p>
+            </div>
+            <div class="footer-item">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:sarah@nextlogic-ai.com">sarah@nextlogic-ai.com</a></p>
+                <p>Phone: +1 (403) 376 6639</p>
+            </div>
+            <div class="footer-item">
+                <h3>Stay Updated</h3>
+                <form class="newsletter-form" id="newsletter-form">
+                    <label for="email" class="sr-only">Email Address</label>
+                    <input type="email" id="email" placeholder="Your email" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year">2025</span> Next Logic AI and Design. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Newsletter form
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! We\'ll keep you updated on our latest services and innovations.');
+            this.reset();
+        });
+
+        // Update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

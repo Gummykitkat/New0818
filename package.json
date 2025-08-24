@@ -4,7 +4,13 @@
   "scripts": {
     "start": "vercel dev"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sar3ear/new.git"
