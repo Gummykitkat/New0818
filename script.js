@@ -1,104 +1,51 @@
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-const app = express();
+// Contact form submission
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const contactMessage = document.getElementById('contact-message');
 
-// Initialize SQLite database
-const db = new sqlite3.Database('./database.db', (err) => {
-    if (err) {
-        console.error('Error connecting to database:', err.message);
-    } else {
-        console.log('Connected to SQLite database');
-        // Create tables if they don't exist
-        db.run(`CREATE TABLE IF NOT EXISTS subscriptions (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT UNIQUE NOT NULL,
-            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
-        
-        db.run(`CREATE TABLE IF NOT EXISTS contacts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            email TEXT NOT NULL,
-            message TEXT NOT NULL,
-            created_at DATETIME DEFAULT CURRENT terrestrial
-
-System: Here's the fixed code with SQLite3 integration for both endpoints, including proper error handling and database operations:
-
-```javascript
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-const app = express();
-
-// Middleware to parse JSON bodies
-app.use(express.json());
-
-// Initialize SQLite database
-const db = new sqlite3.Database('./database.db', (err) => {
-    if (err) {
-        console.error('Error connecting to database:', err.message);
-        return;
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message }),
+        });
+        const result = await response.json();
+        contactMessage.textContent = result.message || result.error;
+        contactMessage.style.color = response.ok ? 'green' : 'red';
+        if (response.ok) {
+            document.getElementById('contact-form').reset();
+        }
+    } catch (error) {
+        contactMessage.textContent = 'Error sending message';
+        contactMessage.style.color = 'red';
+        console.error('Fetch error:', error);
     }
-    console.log('Connected to SQLite database');
-    
-    // Create tables if they don't exist
-    db.run(`CREATE TABLE IF NOT EXISTS subscriptions (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        email TEXT UNIQUE NOT NULL,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    )`);
-    
-    db.run(`CREATE TABLE IF NOT EXISTS contacts (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        email TEXT NOT NULL,
-        message TEXT NOT NULL,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    )`);
 });
 
-// Subscribe endpoint
-app.post('/api/subscribe', (req, res) => {
-    const { email } = req.body;
+// Newsletter form submission
+document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    const newsletterMessage = document.getElementById('newsletter-message');
 
-    // Input validation
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return res.status(400).json({ error: 'Invalid email address' });
-    }
-
-    db.run('INSERT INTO subscriptions (email) VALUES (?)', [email], function(err) {
-        if (err) {
-            if (err.message.includes('UNIQUE constraint')) {
-                return res.status(400).json({ error: 'Email already subscribed' });
-            }
-            console.error('Database error:', err.message);
-            return res.status(500).json({ error: 'Internal server error' });
+    try {
+        const response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+        });
+        const result = await response.json();
+        newsletterMessage.textContent = result.message || result.error;
+        newsletterMessage.style.color = response.ok ? 'green' : 'red';
+        if (response.ok) {
+            document.getElementById('newsletter-form').reset();
         }
-        console.log('Newsletter Subscription:', email);
-        res.status(200).json({ message: 'Subscribed successfully' });
-    });
-});
-
-// Contact form endpoint
-app.post('/api/contact', (req, res) => {
-    const { name, email, message } = req.body;
-
-    // Input validation
-    if (!name || !email || !message) {
-        return res.status(400).json({ error: 'All fields are required' });
+    } catch (error) {
+        newsletterMessage.textContent = 'Error subscribing';
+        newsletterMessage.style.color = 'red';
+        console.error('Fetch error:', error);
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return res.status(400).json({ error: 'Invalid email address' });
-    }
-
-    db.run('INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)', 
-        [name, email, message], 
-        function(err) {
-            if (err) {
-                console.error('Database error:', err.message);
-                return res.status(500).json({ error: 'Internal server error' });
-            }
-            console.log('Contact Form Submission:', { name, email, message });
-            res.status(200).json({ message: 'Message sent successfully' });
-        }
-    );
 });
