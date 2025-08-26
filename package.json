@@ -5,6 +5,7 @@
     "start": "vercel dev"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.12",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
