@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-indigo-600">NextLogic</h1>
           <nav className="space-x-6">
-            <a href="/" className="hover:text-indigo-600">Home</a>
+            <a href="/index" className="hover:text-indigo-600">Home</a>
             <a href="/services" className="hover:text-indigo-600">Services</a>
             <a href="/about" className="hover:text-indigo-600">About</a>
             <a href="/contact" className="hover:text-indigo-600">Contact</a>
