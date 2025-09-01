@@ -11,10 +11,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "nextlogic-ai.com",
-      },
-      {
-        protocol: "https",
         hostname: "cdn.example.net",
       },
     ],
