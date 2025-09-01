@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Cpu, Monitor, Palette, <Instagram></Instagram> } from "lucide-react";
+import { Cpu, Monitor, Palette, } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Home() {
   return (

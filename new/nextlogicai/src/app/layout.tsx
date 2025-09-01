@@ -1,5 +1,3 @@
-"use client";
-
 import "./styles/globals.css";
 import type { Metadata, NextPage } from "next";
 import type { ReactNode } from "react";
