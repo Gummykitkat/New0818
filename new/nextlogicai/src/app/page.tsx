@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Cpu, Monitor, Palette, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Cpu, Monitor, Palette, <Instagram></Instagram> } from "lucide-react";
 
 export default function Home() {
   return (

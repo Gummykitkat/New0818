@@ -1,20 +1,27 @@
 import type { NextConfig } from "next";
+import path from "path";
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "nextlogic-ai.com", // 👈 replace with the actual host of your images
+        hostname: "nextlogic-ai.com",
       },
       {
         protocol: "https",
-        hostname: "cdn.example.net", // 👈 add more if you use multiple
+        hostname: "cdn.example.net",
       },
     ],
   },
+  turbopack: {
+    root: path.join(__dirname, ".."),
+  },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

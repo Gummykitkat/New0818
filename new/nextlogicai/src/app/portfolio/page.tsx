@@ -21,12 +21,12 @@ export default function Portfolio() {
       desc: "Built a smart chatbot to improve customer support for an online store.",
     },
     {
-      img: "/images/customer-support-chatbot.jpg",
+      img: "/images/ecommercewebsite.jpg",
       title: "E-commerce Website",
       desc: "Designed a responsive site with a clean UI for a small business.",
     },
     {
-      img: "/images/inventory-prediction.jpg",
+      img: "/images/brand-identity.jpg",
       title: "Brand Identity",
       desc: "Created a logo and guidelines for a startup’s bold new look.",
     },
