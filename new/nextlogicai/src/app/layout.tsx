@@ -1,8 +1,11 @@
+"use client";
+
 import "./styles/globals.css";
-import type { Metadata } from "next";
+import type { Metadata, NextPage } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaInstagram } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "NextLogic",
@@ -46,7 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main>{children}</main>
 
         {/* Footer */}
-        <footer className="footer">
+  <footer className="footer">
           <div className="container footer-grid">
             <div className="footer-item">
               <h3>Next Logic AI and Design</h3>
@@ -67,10 +70,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
           <div className="container footer-bottom">
             <p>© {new Date().getFullYear()} Next Logic AI and Design. All rights reserved.</p>
-            <div className="social-links">
-              <Link href="https://facebook.com"><i className="fab fa-facebook-f"></i></Link>
-              <Link href="https://twitter.com"><i className="fab fa-twitter"></i></Link>
-              <Link href="https://linkedin.com"><i className="fab fa-linkedin-in"></i></Link>
+            <div className="social-links flex space-x-4">
+              <a
+                href="https://instagram.com/nextlogicai"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="w-6 h-6 hover:text-indigo-400" />
+              </a>
             </div>
           </div>
         </footer>
